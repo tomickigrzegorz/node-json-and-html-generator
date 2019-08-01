@@ -1,8 +1,5 @@
 const fs = require('fs');
 
-// dane to jsona
-// const now = new Date();
-// const date = `${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`;
 const datePublished = new Date().toISOString().slice(0, 10);
 const dateModified = datePublished;
 const author = 'Grzegorz Tomicki';

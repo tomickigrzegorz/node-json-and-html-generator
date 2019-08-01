@@ -31,7 +31,6 @@ app.use('/name/vendor', express.static(path.join(__dirname, 'sources/vendor')));
 app.use(favicon(path.join(__dirname, '/public/images/favicon.ico')));
 
 // get
-// app.get('/name/:imageFilder', (req, res) => {
 app.get('/name/:imageFolder', (req, res) => {
 
   const imageFolder = req.params.imageFolder;
@@ -90,10 +89,8 @@ app.get('/name/:imageFolder', (req, res) => {
     }
 
     // save json files
-
     template(options);
 
-    // res.redirect(`./?name=${imageFolder}&send`);
     res.redirect('./success');
   });
 

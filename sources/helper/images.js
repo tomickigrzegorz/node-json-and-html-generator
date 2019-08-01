@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 const getAllFiles = dir =>
 fs.readdirSync(dir).reduce((files, file) => {
