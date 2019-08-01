@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { writeFile } = require('fs');
 
 const datePublished = new Date().toISOString().slice(0, 10);
 const dateModified = datePublished;
@@ -34,10 +34,10 @@ const template = (options) => {
   }
 }
   `;
-  console.log('asdsadasd', nameFolder);
-  fs.writeFile(`./data/${nameFolder}.json`, templateJson, (err) => {
+
+  writeFile(`./data/${nameFolder}.json`, templateJson, (err) => {
     if (err) return console.log(err);
-    console.log('json has been saved');
+    return console.log('json has been saved');
   });
 };
 

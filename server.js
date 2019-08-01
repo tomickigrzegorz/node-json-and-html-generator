@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { existsSync } = require('fs');
 const path = require('path');
 const express = require('express');
 const es6Renderer = require('express-es6-template-engine');
@@ -96,7 +96,7 @@ app.get('/name/:imageFolder', (req, res) => {
   };
   const allImages = getAllFiles(`./images/${options.imageFolder}/${options.size}/`);
 
-  if (!fs.existsSync(`./images/${options.imageFolder}`)) {
+  if (!existsSync(`./images/${options.imageFolder}`)) {
     res.render('404', {
       locals,
     });
