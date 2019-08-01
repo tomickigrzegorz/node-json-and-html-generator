@@ -53,7 +53,6 @@ app.get('/name/:imageFolder', (req, res) => {
   res.render('index', {
     locals: {
       title: imageFolder,
-      send: send !== undefined ? 'Json został zapisany' : '',
       features: getAllFiles(`./images/${options.imageFolder}/${options.size}/`)
     },
     partials: {
@@ -100,7 +99,7 @@ app.get('/success', (req, res) => {
   res.render('success', {
     locals: {
       title: 'success',
-      test: 'JSON został zapisany do folderu data'
+      test: 'JSON has been saved to the data folder'
     }
   });
 });
