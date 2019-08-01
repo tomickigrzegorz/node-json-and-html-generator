@@ -39,3 +39,6 @@ Most important part of it's technology stack:
 * [semantic-ui](https://semantic-ui.com/)
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)
+
+
+![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/screenshot.png)
