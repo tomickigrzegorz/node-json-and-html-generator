@@ -4,6 +4,8 @@ This is a simple CMS application to generate json. This Json is used to generate
 
 > The problem that was solved, I had a script that generated an empty `Json` with only added photos, and the rest I had to enter manually. It was not easy because everything had to be inserted and formatted manually.
 
+Of course, nothing prevents you from generating final HTML files instead of JSON files.
+
 ## Initialization
 
 Before the first use, clone this repository and install node dependencies: `yarn` or `npm install`
@@ -39,11 +41,6 @@ Most important part of it's technology stack:
 * [semantic-ui](https://semantic-ui.com/)
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)
-
-
-```
-Of course, nothing prevents you from generating final HTML files instead of JSON files.
-```
 
 
 ![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/screenshot.png)
