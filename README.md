@@ -2,7 +2,7 @@
 
 This is a simple application to generate json. This Json is used to generate static html files in another project, exactly including this one [photoBlog](https://github.com/tomik23/photoBlog)
 
-> Problem that occurred, I had a script in the node that generated an empty json only with added photos and the rest I had to enter manually. Which was not easy due to the fact that everything had to be inserted and formatted.
+> The problem that was solved, I had a script that generated an empty `Json` with only added photos, and the rest I had to enter manually. It was not easy because everything had to be inserted and formatted manually.
 
 ## Initialization
 
