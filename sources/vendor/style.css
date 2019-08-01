@@ -1,0 +1,63 @@
+.container {
+  margin: 30px 0 40px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 20px;
+}
+
+.ui.header {
+  text-transform: uppercase;
+}
+
+.ui.form .field>label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.required {
+  position: relative;
+  margin: 3rem 1rem 4rem;
+}
+
+.required:before {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  background-color: #F0F0F0;
+  content: '';
+  z-index: -1;
+  width: calc(100% + 2rem);
+  height: calc(100% + 3rem);
+  border: 1px solid #21ba45;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px 5px rgba(158, 158, 158, 0.1);
+}
+
+.required:after {
+  position: absolute;
+  content: 'all fields are required';
+  bottom: -23px;
+  right: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.info-send {
+  margin: 0 -1rem !important;
+  text-transform: uppercase;
+}
+
+.save-json {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #fff;
+}
