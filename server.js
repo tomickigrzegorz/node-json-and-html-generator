@@ -8,7 +8,7 @@ const favicon = require('serve-favicon');
 const app = express();
 
 // function
-const getAllFiles = require('./sources/helper/images');
+const { getAllFiles, getAllDirectory } = require('./sources/helper/images');
 const template = require('./sources/helper/template');
 
 const locals = {
@@ -27,39 +27,11 @@ app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // path to css, images, favico
-app.use('/name/images', express.static(path.join(__dirname, 'images')));
-app.use('/name/vendor', express.static(path.join(__dirname, 'sources/vendor')));
+
+app.use('/vendor', express.static(path.join(__dirname, 'sources/vendor')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
 app.use(favicon(path.join(__dirname, '/public/images/favicon.ico')));
-
-// get
-app.get('/name/:imageFolder', (req, res) => {
-  const { imageFolder } = req.params;
-  // const imageFolder = req.query.name;
-  // const { send } = req.query;
-
-  const index = path.join(__dirname, '/sources/views/images.html');
-  const options = {
-    imageFolder,
-    size: 1200,
-  };
-
-  if (!fs.existsSync(`./images/${options.imageFolder}`)) {
-    res.render('404', {
-      locals,
-    });
-    return;
-  }
-
-  res.render('index', {
-    locals: {
-      title: imageFolder,
-      features: getAllFiles(`./images/${options.imageFolder}/${options.size}/`),
-    },
-    partials: {
-      partial: index,
-    },
-  });
-});
 
 // get post z formularza
 app.post('/', (req, res) => {
@@ -98,6 +70,49 @@ app.post('/', (req, res) => {
   template(config);
 
   res.redirect('./success');
+});
+
+app.get('/', (req, res) => {
+  const list = path.join(__dirname, '/sources/views/list.html');
+  res.render('allDirectory', {
+    locals: {
+      title: 'All directory',
+      allFolders: getAllDirectory('./images/'),
+    },
+    partials: {
+      partial: list,
+    },
+  });
+});
+
+// get
+app.get('/name/:imageFolder', (req, res) => {
+  const { imageFolder } = req.params;
+
+  const index = path.join(__dirname, '/sources/views/images.html');
+  const options = {
+    imageFolder,
+    size: 1200,
+  };
+  const allImages = getAllFiles(`./images/${options.imageFolder}/${options.size}/`);
+
+  if (!fs.existsSync(`./images/${options.imageFolder}`)) {
+    res.render('404', {
+      locals,
+    });
+    return;
+  }
+
+  res.render('index', {
+    locals: {
+      title: imageFolder,
+      count: allImages.length,
+      features: allImages,
+    },
+    partials: {
+      partial: index,
+    },
+  });
 });
 
 app.get('/success', (req, res) => {

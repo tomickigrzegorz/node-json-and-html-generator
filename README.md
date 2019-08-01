@@ -23,11 +23,11 @@ The `images` folder consists of `gallery-name/1200`, where 1200 is [breakpoints]
 
 Run the app, just call: `yarn start` or `npm run start`
 
-Open the address `http://localhost:3000/name/gallery-name` the last part of the address is the name of your photo folder.
+Open the address `http://localhost:3000` the last part of the address is the name of your photo folder.
 
 ## TODO
 
-* first adding a page with a list of available folders with photos to choose from
+* ~~first adding a page with a list of available folders with photos to choose from~~
 * validation of the form
 * the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up
 * ...

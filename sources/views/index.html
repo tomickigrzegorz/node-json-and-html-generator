@@ -7,14 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>CMS json generator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  <link rel="stylesheet" href="./vendor/zooom.min.css">
-  <link rel="stylesheet" href="./vendor/flatpickr.min.css">
-  <link rel="stylesheet" href="./vendor/style.css">
+  <link rel="stylesheet" href="../vendor/zooom.min.css">
+  <link rel="stylesheet" href="../vendor/flatpickr.min.css">
+  <link rel="stylesheet" href="../vendor/style.css">
 </head>
 
 <body>
   <div class="ui container">
-    <h1><i class="images icon"></i> ${title}</h1>
+    <h1><a href="/"><i class="home red icon"></i></a> ${title}</h1>
     <form class="ui form" action="/" method="POST">
       <input type="hidden" name="folderName" value="${title}">
       <div class="required">
@@ -49,7 +49,8 @@
         </div>
       </div>
 
-      <h2 class="ui dividing header">list of photos</h2>
+      <h2 class="ui dividing header"></i> list of photos <i class="red long arrow alternate right icon"></i>pcs.
+        ${count}</h2>
       <div class="field">
         ${partial}
       </div>
@@ -58,9 +59,9 @@
       </div>
     </form>
   </div>
-  <script src="./vendor/zooom.min.js"></script>
-  <script src="./vendor/flatpickr.min.js"></script>
-  <script src="./vendor/flatpickr.pl.js"></script>
+  <script src="../vendor/zooom.min.js"></script>
+  <script src="../vendor/flatpickr.min.js"></script>
+  <script src="../vendor/flatpickr.pl.js"></script>
 
   <script>
     window.addEventListener('DOMContentLoaded', function () {

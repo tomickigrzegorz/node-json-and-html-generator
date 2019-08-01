@@ -3,7 +3,7 @@ ${features.map(image => `
   <div class="eleven wide column">
     <div class="ui fluid image">
       <div class="ui red ribbon label">${image.split('/')[4]}</div>
-      <img class="fluid image" src="${image}">
+      <img class="fluid image" src="../${image}">
       <input type="hidden" name="imageName" value="${image.split('/')[4]}">
     </div>
   </div>
