@@ -41,4 +41,9 @@ Most important part of it's technology stack:
 * [zooom.js](https://github.com/tomik23/zooom.js)
 
 
+```
+Of course, nothing prevents you from generating final HTML files instead of JSON files.
+```
+
+
 ![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/screenshot.png)
