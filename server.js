@@ -63,26 +63,34 @@ app.get('/name/:imageFolder', (req, res) => {
 
 // get post z formularza
 app.post('/', (req, res) => {
-  const postBody = req.body;
-  const nameFolder = postBody.folderName;
-  const { imageAlt } = postBody;
-  const { imageText } = postBody;
+  const {
+    folderName,
+    seoTitle,
+    seoDescription,
+    bodyTitle,
+    bodyDate,
+    bodyText,
+    imageName,
+    imageAlt,
+    imageText,
+  } = req.body;
 
-  const imagePath = postBody.imageName.map((image, index) => `
+  const imagePath = imageName.map((image, index) => `
     {
-      "path": "./images/${nameFolder}/",
+      "path": "./images/${folderName}/",
       "img": "${image}",
       "alt": "${imageAlt[index]}",
       "text": ${JSON.stringify(imageText[index])} 
     }`);
 
+
   const config = {
-    nameFolder,
-    seoTitle: JSON.stringify(postBody.seoTitle),
-    seoDescription: JSON.stringify(postBody.seoDescription),
-    bodyTitle: JSON.stringify(postBody.bodyTitle),
-    bodyDate: JSON.stringify(postBody.bodyDate),
-    bodyText: JSON.stringify(postBody.bodyText),
+    nameFolder: folderName,
+    seoTitle: JSON.stringify(seoTitle),
+    seoDescription: JSON.stringify(seoDescription),
+    bodyTitle: JSON.stringify(bodyTitle),
+    bodyDate: JSON.stringify(bodyDate),
+    bodyText: JSON.stringify(bodyText),
     images: imagePath,
   };
 

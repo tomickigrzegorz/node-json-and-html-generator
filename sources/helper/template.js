@@ -12,10 +12,10 @@ const template = (options) => {
     bodyTitle,
     bodyDate,
     bodyText,
-    images
+    images,
   } = options;
 
-  const template = `{
+  const templateJson = `{
   "head": {
     "title": ${seoTitle},
     "description": ${seoDescription}
@@ -34,12 +34,11 @@ const template = (options) => {
   }
 }
   `;
-
-  fs.writeFile(`./data/${nameFolder}.json`, template, (err) => {
-    if(err) return console.log(err);
-    console.log('Wrote Hello World in file helloworld.txt, just check it');
-   });
-
-}
+  console.log('asdsadasd', nameFolder);
+  fs.writeFile(`./data/${nameFolder}.json`, templateJson, (err) => {
+    if (err) return console.log(err);
+    console.log('json has been saved');
+  });
+};
 
 module.exports = template;
