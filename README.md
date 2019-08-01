@@ -21,7 +21,7 @@ The `images` folder consists of `gallery-name/1200`, where 1200 is [breakpoints]
 
 Run the app, just call: `yarn start` or `npm run start`
 
-Open the address `http://localhost:3000/name/lwow` the last part of the address is the name of your photo folder.
+Open the address `http://localhost:3000/name/gallery-nam` the last part of the address is the name of your photo folder.
 
 ## TODO
 
