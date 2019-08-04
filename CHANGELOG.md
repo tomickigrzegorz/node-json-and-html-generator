@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 - Picture caching - 1h
 
 ### Changed
-- Change the appearance of the main page http://localhost:3000/
+- Change the appearance of the main page
 
 ## 2019-08-01
 ### Added
