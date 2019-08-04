@@ -28,6 +28,8 @@ Open the address `http://localhost:3000`. A list of available folders should app
 ## TODO
 
 * ~~first adding a page with a list of available folders with photos to choose from~~
+* ~~the possibility to update the generated json~~
+* small wysiwyg html editor
 * validation of the form
 * the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up
 * ...
