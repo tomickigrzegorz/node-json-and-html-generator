@@ -2,7 +2,7 @@ ${allFolders.map(key => `
 <tr>
   <td>${key[0]}</td>
   <td><a href="/name/${key[0]}">new</a></td>
-  <td>${key[1] !== undefined ? `<a href="/update/${key[0]}">update</a>`: ''}
+  <td>${key[1] ? `<a href="/update/${key[0]}">update</a>`: ''}
   </td>
 </tr>
 `).join('')}
