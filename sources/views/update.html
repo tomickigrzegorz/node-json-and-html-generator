@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CMS json generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="../vendor/zooom.min.css">
+  <link rel="stylesheet" href="../vendor/flatpickr.min.css">
+  <link rel="stylesheet" href="../vendor/style.css">
+</head>
+
+<body>
+  <div class="ui container">
+    <h1><a href="/"><i class="home red icon"></i></a>UPDATE - ${title}</h1>
+    <form class="ui form" action="/" method="POST">
+      <input type="hidden" name="folderName" value="${title}">
+      <div class="required">
+        <h4 class="ui dividing header">seo</h4>
+        <div class="fields">
+          <div class="eight wide field">
+            <label>title head</label>
+            <input type="text" name="seoTitle" placeholder="title" required>
+          </div>
+          <div class="eight wide field">
+            <label>description head</label>
+            <input type="text" name="seoDescription" placeholder="description" required>
+          </div>
+        </div>
+
+        <h4 class="ui dividing header">data on the top of the site</h4>
+        <div class="fields">
+          <div class="eight wide field">
+            <label>title H1</label>
+            <input type="text" name="bodyTitle" placeholder="title" required>
+          </div>
+          <div class="eight wide field">
+            <label>date</label>
+            <input type="text" class="bodyDate" name="bodyDate" placeholder="Date" required>
+          </div>
+        </div>
+        <div class="fields">
+          <div class="sixteen wide field">
+            <label>text</label>
+            <textarea name="bodyText" rows="5" required></textarea>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="ui dividing header"></i> list of photos <i class="red long arrow alternate right icon"></i>pcs.
+        ${count}</h2>
+      <div class="field">
+        ${partial}
+      </div>
+      <div class="ui container save-json">
+        <button class="ui green button">UPDATE JSON</but>
+      </div>
+    </form>
+  </div>
+
+  <script>const fileJson = '${ title }.json';</script>
+  <script src="../vendor/zooom.min.js"></script>
+  <script src="../vendor/flatpickr.min.js"></script>
+  <script src="../vendor/flatpickr.pl.js"></script>
+  <script src="../vendor/jsonFileForm.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      new Zooom({
+        element: 'img',
+        padding: 80,
+        overlay: {
+          color: '#000',
+          opacity: '.5'
+        }
+      });
+
+      flatpickr(".bodyDate", {
+        "locale": "pl",
+        "dateFormat": "d.m.Y"
+      });
+
+    })
+  </script>
+</body>
+
+</html>
