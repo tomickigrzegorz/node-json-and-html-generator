@@ -70,3 +70,27 @@ h2 {
   padding: 10px 0;
   background-color: #fff;
 }
+
+/* draggable */
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+.column {
+  cursor: move;
+}
+
+.item.dragElem {
+  opacity: 0.4;
+}
+
+.item.over {
+  border: 2px solid #21ba45;
+}
