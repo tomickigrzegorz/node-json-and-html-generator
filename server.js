@@ -1,14 +1,20 @@
-const { existsSync } = require('fs');
+const { existsSync, readdirSync } = require('fs');
 const path = require('path');
 const express = require('express');
+const compression = require('compression');
 const es6Renderer = require('express-es6-template-engine');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 
 const app = express();
 
+// compression static files
+app.use(compression());
+
 // function
-const { getAllFiles, getAllDirectory, getAllJson } = require('./sources/helper/images');
+const {
+  getAllFiles, getAllDirectory, getAllJson, readJson,
+} = require('./sources/helper/images');
 const template = require('./sources/helper/template');
 
 // time for caching - maxAge
@@ -32,6 +38,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // path to css, images, favico
 app.use('/vendor', express.static(path.join(__dirname, 'sources/vendor')));
 app.use('/images', express.static(path.join(__dirname, 'images'), { maxAge: oneHour }));
+
 // json data
 app.use('/update', express.static(path.join(__dirname, 'data')));
 
@@ -79,7 +86,8 @@ app.post('/', (req, res) => {
 
 const keys = getAllDirectory('./images/');
 const values = getAllJson('./data/', 'json');
-const merged = keys.reduce((obj, key, index) => ({ ...obj, [key]: values[index] }), {});
+
+const merged = keys.reduce((obj, key, index) => ({ ...obj, [key]: values.includes(key) }), {});
 
 // showing all directory
 app.get('/', (req, res) => {
@@ -136,6 +144,8 @@ app.get('/update/:imageFolder', (req, res) => {
   };
   const allImages = getAllFiles(`./images/${options.imageFolder}/${options.size}/`);
 
+  const readimg = readJson(`./data/${options.imageFolder}.json`);
+
   if (!existsSync(`./data/${imageFolder}.json`)) {
     res.render('404', {
       locals,
@@ -147,7 +157,7 @@ app.get('/update/:imageFolder', (req, res) => {
     locals: {
       title: imageFolder,
       count: allImages.length,
-      features: allImages,
+      features: readimg,
     },
     partials: {
       partial: index,
@@ -184,5 +194,5 @@ app.use((err, req, res) => {
 // listen http://localhost:3000
 app.listen(3000, () => {
   // eslint-disable-next-line no-console
-  console.log('info', 'Server is runing at port: 3000');
+  console.log('Server is runing at port: http://localhost:3000');
 });
