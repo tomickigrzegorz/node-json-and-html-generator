@@ -1,6 +1,15 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-08-05
+### Added 
+- Responsive section "LIST OF PHOTOS"
+- Caching vendor - css, js
+- Drag-and-drop in the photos section
+
+### Removed
+- Conflict between zoom.js and drag-and-drop, zoom has been removed
+
 ## 2019-08-03
 ### Added
 - Possibility to modify the already generated json file
