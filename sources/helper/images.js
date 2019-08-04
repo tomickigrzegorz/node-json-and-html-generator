@@ -10,4 +10,8 @@ const getAllDirectory = dir => readdirSync(dir, { withFileTypes: true })
   .filter(dirent => dirent.isDirectory())
   .map(dirent => dirent.name);
 
-module.exports = { getAllFiles, getAllDirectory };
+
+const getAllJson = (dir, extension) => readdirSync(dir)
+  .filter(file => file.match(new RegExp(`.*\\.(${extension})`, 'ig')));
+
+module.exports = { getAllFiles, getAllDirectory, getAllJson };
