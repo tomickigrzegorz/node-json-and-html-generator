@@ -3,7 +3,7 @@ ${features.map(image =>`
   <div class="ui grid stackable box-item">
     <div class="eleven wide column image-section">
       <div class="ui fluid image">
-        <div class="ui blue ribbon label">${image.split('/')[4]}</div>
+        <div class="ui red ribbon label">${image.split('/')[4]}</div>
         <img class="fluid image img-zoom" src="../${image}">
         <input type="hidden" name="imageName" value="${image.split('/')[4]}">
       </div>
