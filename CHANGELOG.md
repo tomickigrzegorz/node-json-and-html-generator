@@ -1,9 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
-## 2019-08-06
+## 2019-08-07
 ### Added
 - New sorting library - sortablejs and zoomjs. The possibility of enlarging and changing the position of photos.
+- Displaying photos in the grid for better UX when sorting
+- Button smooth-scroll to top of page
+- Date of last modification of the json file under the title
 
 ### Changed
 - Adding 'min' to zooom.js and zooom.css
