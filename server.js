@@ -1,4 +1,4 @@
-const { existsSync, readdirSync } = require('fs');
+const { existsSync } = require('fs');
 const path = require('path');
 const express = require('express');
 const compression = require('compression');
@@ -87,7 +87,7 @@ app.post('/', (req, res) => {
 const keys = getAllDirectory('./images/');
 const values = getAllJson('./data/', 'json');
 
-const merged = keys.reduce((obj, key, index) => ({ ...obj, [key]: values.includes(key) }), {});
+const merged = keys.reduce((obj, key) => ({ ...obj, [key]: values.includes(key) }), {});
 
 // showing all directory
 app.get('/', (req, res) => {
