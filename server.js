@@ -1,4 +1,4 @@
-const { existsSync } = require('fs');
+const { existsSync, statSync } = require('fs');
 const path = require('path');
 const express = require('express');
 const compression = require('compression');
@@ -78,7 +78,7 @@ app.post('/', (req, res) => {
     images: imagePath,
   };
 
-  // save json files
+  // save json filess
   template(config);
 
   res.redirect('./success');
@@ -153,9 +153,21 @@ app.get('/update/:imageFolder', (req, res) => {
     return;
   }
 
+  const optionsDate = {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  };
+  let dateCreateJsonFile = statSync(`./data/${imageFolder}.json`).atime;
+  dateCreateJsonFile = (new Date(dateCreateJsonFile).toLocaleString('pl', optionsDate));
+
   res.render('update', {
     locals: {
       title: imageFolder,
+      data: dateCreateJsonFile,
       count: allImages.length,
       features: readimg,
     },
