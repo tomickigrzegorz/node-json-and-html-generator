@@ -8,6 +8,7 @@
   <title>CMS json generator</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" href="../vendor/flatpickr.min.css">
+  <link rel="stylesheet" href="../vendor/zooom.min.css">
   <link rel="stylesheet" href="../vendor/style.css">
 </head>
 
@@ -63,15 +64,30 @@
   <script src="../vendor/flatpickr.min.js"></script>
   <script src="../vendor/flatpickr.pl.js"></script>
   <script src="../vendor/updateform.js"></script>
-  <script src="../vendor/draggable.js"></script>
-
+  <script src="../vendor/zooom.min.js"></script>
+  <script src="../vendor/sortable.min.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', function () {
+      const example1 = document.getElementById('columns');
+      new Sortable(example1, {
+        swap: true,
+        swapClass: 'highlight',
+        animation: 150
+      });
+
+      new Zooom({
+        element: 'img',
+        padding: 80,
+        overlay: {
+          color: '#000',
+          opacity: '.5'
+        }
+      });
+
       flatpickr(".bodyDate", {
         "locale": "pl",
         "dateFormat": "d.m.Y"
       });
-
     })
   </script>
 </body>
