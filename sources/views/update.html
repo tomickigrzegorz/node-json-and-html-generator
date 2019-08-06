@@ -14,7 +14,8 @@
 
 <body>
   <div class="ui container">
-    <h1><a href="/"><i class="home red icon"></i></a>UPDATE - ${title}</h1>
+    <h1><a href="/"><i class="home orange icon"></i></a> ${title}</h1>
+    <div class="date-time">file change date - ${data}</div>
     <form class="ui form" action="/" method="POST">
       <input type="hidden" name="folderName" value="${title}">
       <div class="required">
@@ -51,11 +52,17 @@
 
       <h2 class="ui dividing header"></i> list of photos <i class="red long arrow alternate right icon"></i>pcs.
         ${count}</h2>
-      <div id="columns" class="ui list">
+      <div id="columns" class="ui list view-grid">
         ${partial}
       </div>
-      <div class="ui container save-json">
-        <button class="ui green button">UPDATE JSON</but>
+      <div class="save-json">
+        <div class="ui container box-content">
+          <button class="ui orange button">UPDATE JSON</button>
+          <div class="ui grid-view-checked">
+            <i class="th big icon icon-grid"></i> <span>grid off</span>
+          </div>
+          <a href="#" class="ui gray button scroll"><i class="chevron up icon"></i> TOP</a>
+        </div>
       </div>
     </form>
   </div>
@@ -63,26 +70,34 @@
   <script>const fileJson = '${ title }.json';</script>
   <script src="../vendor/flatpickr.min.js"></script>
   <script src="../vendor/flatpickr.pl.js"></script>
-  <script src="../vendor/updateform.js"></script>
   <script src="../vendor/zooom.min.js"></script>
   <script src="../vendor/sortable.min.js"></script>
+  <script src="../vendor/smooth-scroll.js"></script>
+  <script src="../vendor/main.js"></script>
   <script>
     window.addEventListener('DOMContentLoaded', function () {
-      const example1 = document.getElementById('columns');
-      new Sortable(example1, {
-        swap: true,
+      const columns = document.getElementById('columns');
+      new Sortable(columns, {
+        // multiDrag: true,
+        // selectedClass: 'selected',
         swapClass: 'highlight',
         animation: 150
       });
 
       new Zooom({
-        element: 'img',
+        element: '.img-zoom',
         padding: 80,
         overlay: {
           color: '#000',
           opacity: '.5'
         }
       });
+
+      const option = {
+        speed: 100,
+        easing: 'easeOutCubic',
+      };
+      const scroll = new SmoothScroll('.scroll', option);
 
       flatpickr(".bodyDate", {
         "locale": "pl",

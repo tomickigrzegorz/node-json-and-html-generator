@@ -31,4 +31,25 @@ window.addEventListener('DOMContentLoaded', () => {
     .then((myJson) => {
       updateForm(myJson);
     });
+
+  // grid change
+  const gridCheckbox = document.querySelector('.grid-view-checked');
+  const viewGrid = document.querySelector('.view-grid');
+  const iconGrid = document.querySelector('.icon-grid');
+
+  gridCheckbox.addEventListener('click', (e) => {
+    viewGrid.classList.toggle('grid-view');
+    iconGrid.classList.toggle('green');
+    const { target } = e;
+    target.innerText = target.innerText === 'GRID OFF' ? 'GRID ON' : 'GRID OFF';
+  });
+
+  // scroll
+  const backToTop = document.querySelector('.scroll');
+  (() => {
+    window.addEventListener('scroll', () => {
+      const pageyoffset = window.pageYOffset || document.documentElement.scrollTop;
+      backToTop.style.display = pageyoffset > 200 ? 'block' : 'none';
+    });
+  })();
 });
