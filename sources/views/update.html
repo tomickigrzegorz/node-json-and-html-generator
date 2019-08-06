@@ -74,37 +74,6 @@
   <script src="../vendor/sortable.min.js"></script>
   <script src="../vendor/smooth-scroll.js"></script>
   <script src="../vendor/main.js"></script>
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      const columns = document.getElementById('columns');
-      new Sortable(columns, {
-        // multiDrag: true,
-        // selectedClass: 'selected',
-        swapClass: 'highlight',
-        animation: 150
-      });
-
-      new Zooom({
-        element: '.img-zoom',
-        padding: 80,
-        overlay: {
-          color: '#000',
-          opacity: '.5'
-        }
-      });
-
-      const option = {
-        speed: 100,
-        easing: 'easeOutCubic',
-      };
-      const scroll = new SmoothScroll('.scroll', option);
-
-      flatpickr(".bodyDate", {
-        "locale": "pl",
-        "dateFormat": "d.m.Y"
-      });
-    })
-  </script>
 </body>
 
 </html>

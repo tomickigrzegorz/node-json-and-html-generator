@@ -1,4 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const example1 = document.getElementById('columns');
+  const sortable = new Sortable(example1, {
+    ghostClass: 'highlight',
+    animation: 150,
+  });
+
   const updateForm = (json) => {
     const { head, body } = json;
     const seoTitle = document.querySelector('[name="seoTitle"]');
@@ -52,4 +58,25 @@ window.addEventListener('DOMContentLoaded', () => {
       backToTop.style.display = pageyoffset > 200 ? 'block' : 'none';
     });
   })();
+
+
+  const zoom = new Zooom({
+    element: '.img-zoom',
+    padding: 80,
+    overlay: {
+      color: '#000',
+      opacity: '.5',
+    },
+  });
+
+  const option = {
+    speed: 100,
+    easing: 'easeOutCubic',
+  };
+  const scroll = new SmoothScroll('.scroll', option);
+
+  flatpickr('.bodyDate', {
+    locale: 'pl',
+    dateFormat: 'd.m.Y',
+  });
 });
