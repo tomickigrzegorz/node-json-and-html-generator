@@ -45,6 +45,14 @@ Most important part of it's technology stack:
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)
 
+### main page
 ![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/page.png)
 
-![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/screenshot.png)
+### calendar
+![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
+
+### grid-off
+![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
+
+### grid-on 
+![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
