@@ -126,6 +126,7 @@ app.get('/name/:imageFolder', (req, res) => {
       title: imageFolder,
       count: allImages.length,
       features: allImages,
+      type: 'new',
     },
     partials: {
       partial: index,
@@ -170,6 +171,7 @@ app.get('/update/:imageFolder', (req, res) => {
       data: dateCreateJsonFile,
       count: allImages.length,
       features: readimg,
+      type: 'update',
     },
     partials: {
       partial: index,

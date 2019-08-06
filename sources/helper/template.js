@@ -2,7 +2,7 @@ const { writeFile } = require('fs');
 
 const datePublished = new Date().toISOString().slice(0, 10);
 const dateModified = datePublished;
-const author = 'Grzegorz Tomicki';
+const author = 'XXXXXXXXX';
 
 const template = (options) => {
   const {
