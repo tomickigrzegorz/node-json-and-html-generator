@@ -44,19 +44,20 @@ Most important part of it's technology stack:
 * [semantic-ui](https://semantic-ui.com/)
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)
+* [SortableJS](https://github.com/SortableJS/Sortable)
 
-> MAIN PAGE
+> **MAIN PAGE**
 
 ![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/page.png)
 
-> CALENDAR
+> **CALENDAR**
 
 ![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
 
-> GRID-OFF
+> **GRID-OFF**
 
 ![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
 
-> [GRID-ON]
+> **GRID-ON**
 
 ![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
