@@ -1,6 +1,18 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-08-10
+### Added
+- pug template
+
+### Changed
+- server.js -> app.js
+- Return to vivid colors
+
+### Removed
+- html template
+- express-es6-template-engine library
+
 ## 2019-08-07
 ### Added
 - New sorting library - sortablejs and zoomjs. The possibility of enlarging and changing the position of photos.
