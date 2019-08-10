@@ -1,0 +1,44 @@
+include ./images.pug
+include ./footer.pug
+
+mixin main()
+  - var dataCreate = data;
+  - var buttonText = siteType == 'new' ? 'SAVE JSON' : 'UPDATE JSON';
+
+  div(class="ui container")
+    h1
+      a(href="/")
+        i(class="home red icon")
+        | #{title}
+    if dataCreate
+      div(class="date-time") Last change - #{data}
+    form(class="ui form" action="/" method="POST")
+      input(type="hidden" name="folderName" value=title)
+      div.required
+        h4(class="ui dividing header") seo
+        div.fields
+          div(class="eight wide field")
+            label title head
+            input(type="text" name="seoTitle" placeholder="title" required)
+          div(class="eight wide field")
+            label description head
+            input(type="text" name="seoDescription" placeholder="description" required)
+        h4(class="ui dividing header") data on the top of the site
+        div(class="fields")
+          div(class="eight wide field")
+            label title H1
+            input(type="text" name="bodyTitle" placeholder="title" required)
+          div(class="eight wide field")
+            label date
+            input(type="text" class="bodyDate" name="bodyDate" placeholder="Date" required)
+        div.fields
+          div(class="sixteen wide field")
+            label text
+            textarea(name="bodyText" rows="5" required)
+
+      h2(class="ui dividing header") list of photos 
+        i(class="red long arrow alternate right icon")
+        | pcs. #{count}
+
+      +images()
+      +footer(buttonText)

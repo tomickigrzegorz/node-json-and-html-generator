@@ -1,0 +1,10 @@
+mixin footer(buttonName)
+  div.save-json
+    div(class="ui container box-content")
+      button(class="ui orange button") #{buttonName}
+      div(class="ui grid-view-checked")
+        i(class="th big icon icon-grid")
+        span grid off
+      a(href="#" class="ui gray button scroll")
+        i(class="chevron up icon")
+        | TOP

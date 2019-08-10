@@ -40,7 +40,7 @@ Open the address `http://localhost:3000`. A list of available folders should app
 Most important part of it's technology stack:
 
 * [express.js](https://expressjs.com/)
-* [express-es6-template-engine](https://www.npmjs.com/package/express-es6-template-engine)
+* [pug](https://github.com/pugjs/pug)
 * [semantic-ui](https://semantic-ui.com/)
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)

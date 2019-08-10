@@ -4,13 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./server.js"
+    "start": "nodemon ./app.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "express": "^4.17.1",
-    "express-es6-template-engine": "^2.1.9",
+    "pug": "^2.0.4",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {

@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  div.container-small
+    div(class="ui container center aligned")
+      div(class="ui icon error message")
+        i(class="info icon")
+        div.content
+            div.header #{header}
+            p #{info}
+            p!= address
+            a(href="/") HOME
