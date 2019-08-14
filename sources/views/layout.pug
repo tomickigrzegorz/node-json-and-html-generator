@@ -1,4 +1,5 @@
-- var host = 'http://localhost:' + port + '/vendor/';
+//- - var host = 'http://localhost:' + port + '/vendor/';
+- var host = '/vendor/';
 
 html(lang="en")
   head
@@ -9,22 +10,22 @@ html(lang="en")
     title #{title}
 
     if siteType == 'new' || siteType == 'update'
-      link(rel="stylesheet", href=host + "flatpickr.min.css")
-      link(rel="stylesheet", href=host + "zooom.min.css")
-      link(rel="stylesheet", href=host + "style.css")
+      link(rel="stylesheet", href=host + "css/flatpickr.min.css")
+      link(rel="stylesheet", href=host + "css/zooom.min.css")
+      link(rel="stylesheet", href=host + "css/style.css")
     else 
-      link(rel="stylesheet", href=host + "style.css")
+      link(rel="stylesheet", href=host + "css/style.css")
 
     body
       block content
 
 
     if siteType == 'new' || siteType == 'update'
-      script(src=host + "flatpickr.min.js")
-      script(src=host + "flatpickr.pl.js")
-      script(src=host + "zooom.min.js")
-      script(src=host + "sortable.min.js")
-      script(src=host + "smooth-scroll.js")
+      script(src=host + "js/flatpickr.min.js")
+      script(src=host + "js/flatpickr.pl.js")
+      script(src=host + "js/zooom.min.js")
+      script(src=host + "js/sortable.min.js")
+      script(src=host + "js/smooth-scroll.js")
 
       script.
         const fileJson = '#{title}.json';

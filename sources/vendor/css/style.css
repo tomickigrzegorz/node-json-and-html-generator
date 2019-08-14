@@ -91,7 +91,7 @@ h2 {
   display: flex
 }
 
-.scroll {
+.ui.button.scroll {
   display: none;
   margin-left: auto !important;
 }

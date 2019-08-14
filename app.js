@@ -47,7 +47,7 @@ app.use('/update', express.static(path.join(__dirname, 'data')));
 // favicon
 app.use(favicon(path.join(__dirname, '/public/images/favicon.ico')));
 
-// get post z formularza
+// get post
 app.post('/', (req, res) => {
   const {
     folderName,
