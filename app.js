@@ -109,7 +109,6 @@ app.get('/name/:imageFolder', (req, res) => {
 
   const options = {
     imageFolder,
-    size: 1200,
   };
 
   if (!existsSync(`./images/${options.imageFolder}`)) {
@@ -124,7 +123,7 @@ app.get('/name/:imageFolder', (req, res) => {
     return;
   }
 
-  const allImages = getAllFiles(`./images/${options.imageFolder}/${options.size}/`);
+  const allImages = getAllFiles(`./images/${options.imageFolder}/`);
 
   res.render('template', {
     siteType: 'new',
@@ -140,7 +139,6 @@ app.get('/update/:imageFolder', (req, res) => {
   const { imageFolder } = req.params;
   const options = {
     imageFolder,
-    size: 1200,
   };
 
   if (!existsSync(`./data/${imageFolder}.json`)) {
@@ -155,7 +153,7 @@ app.get('/update/:imageFolder', (req, res) => {
     return;
   }
 
-  const allImages = getAllFiles(`./images/${options.imageFolder}/${options.size}/`);
+  const allImages = getAllFiles(`./images/${options.imageFolder}/`);
 
   const readimg = readJson(`./data/${options.imageFolder}.json`);
 

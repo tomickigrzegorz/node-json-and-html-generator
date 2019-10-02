@@ -17,7 +17,7 @@ const getAllJson = (dir, extension) => readdirSync(dir)
 const readJson = (dir) => {
   const fileContents = readFileSync(dir, 'utf8');
   const images = JSON.parse(fileContents);
-  return images.body.items.map(image => `./${image.path}1200/${image.img}`);
+  return images.body.items.map(image => `./${image.path}${image.img}`);
 };
 
 
