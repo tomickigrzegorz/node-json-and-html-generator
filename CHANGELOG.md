@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-10-02
+### Changed
+- delete unnecessary folder in photos
+- update devDependencies
+
 ## 2019-08-10
 ### Added
 - pug template
