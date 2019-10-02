@@ -17,7 +17,7 @@ The application needs two folders:
 * images
 
 The `date` folder for saving json files  
-The `images` folder consists of `gallery-name/1200`, where 1200 is [breakpoints](https://github.com/tomik23/photoBlog/tree/master/sources/images/jeden-dzien-w-berlinie)
+The `images` folder consists of `gallery-name`
 
 ## Run the app
 

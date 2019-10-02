@@ -1,7 +1,7 @@
 mixin images()
   div(id="columns" class="ui list view-grid")
     each image, i in images
-      - var imageFile = image.split('/')[3]
+      - var imageFile = image.split('/')[2]
       div.item
         div(class="ui grid stackable box-item")
           div(class="eleven wide column image-section")
