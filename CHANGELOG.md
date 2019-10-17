@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-10-18
+### Changed 
+- Installation dotenv
+- Create configuration files .env, config.js
+- Ability to generate html files
+- Update `screenshot`
+- Update README.md
+
 ## 2019-10-02
 ### Changed
 - delete unnecessary folder in photos
