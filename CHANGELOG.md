@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 ### Changed 
 - Update `screenshot`
 - Update README.md
+- Remove html branche
 
 ## 2019-10-02
 ### Changed
