@@ -2,10 +2,12 @@
 All notable changes to this project will be documented in this file.
 
 ## 2019-10-18
-### Changed 
+### Added
 - Installation dotenv
 - Create configuration files .env, config.js
 - Ability to generate html files
+
+### Changed 
 - Update `screenshot`
 - Update README.md
 
