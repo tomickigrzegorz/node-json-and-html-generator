@@ -110,8 +110,6 @@ const merged = keys.reduce((obj, key) => ({
 
 const allFolders = Object.entries(merged).map((item) => [...item, htmlFiles.includes(item[0])]);
 
-console.log(allFolders);
-
 // showing all directory
 app.get('/', (req, res) => {
   res.render('directory', {
