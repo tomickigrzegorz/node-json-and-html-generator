@@ -1,10 +1,13 @@
-mixin footer(buttonName)
+mixin footer(buttonName, generate)
   div.save-json
     div(class="ui container box-content")
       button(class="ui orange button") #{buttonName}
-      div(class="ui grid-view-checked")
-        i(class="th big icon icon-grid")
-        span grid off
+      div(class="ui checkbox grid-view-checked")
+        input(id="gridGen" type="checkbox" name="grid")
+        label(for="gridGen") grid
+      div(class="ui checkbox html-generotor")
+        input(id="html" type="checkbox" name="html" checked = generate == true)
+        label(for="html") HTML SAVE
       a(href="#" class="ui gray button scroll")
         i(class="chevron up icon")
         | TOP

@@ -84,11 +84,11 @@ html(lang="en")
           const viewGrid = document.querySelector('.view-grid');
           const iconGrid = document.querySelector('.icon-grid');
 
-          gridCheckbox.addEventListener('click', (e) => {
-            viewGrid.classList.toggle('grid-view');
-            iconGrid.classList.toggle('green');
+          gridCheckbox.addEventListener('click', e => {
             const { target } = e;
-            target.innerText = target.innerText === 'GRID OFF' ? 'GRID ON' : 'GRID OFF';
+            if(target.name === 'grid') {
+              viewGrid.classList.toggle('grid-view');
+            }
           });
 
           // scroll

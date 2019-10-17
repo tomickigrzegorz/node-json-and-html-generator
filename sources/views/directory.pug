@@ -8,11 +8,13 @@ block content
           tr
             th(class="ten wide") List of available galleries
             th(class="three wide center aligned") Create
-            th(class="three wide center aligned") Update
+            th(class="three wide center aligned") Create
+            th(class="three wide center aligned") HTML
         tbody
           each folder, i in folders
             - var newFolder = folder[0]
             - var update = folder[1]
+            - var html = folder[2]
             tr
               td
                 i(class="camera retro icon") 
@@ -22,6 +24,9 @@ block content
               td(class="center aligned") 
                 if update
                   a(href="/update/" + newFolder class="ui orange label") UPDATE
+              td(class="center aligned") 
+                if html
+                  a(href='../html/'+newFolder + ".html" class="ui red label") HTML
 
 
       div(class="ui bottom attached info message")

@@ -4,7 +4,7 @@ include ./footer.pug
 mixin main()
   - var dataCreate = data;
   - var buttonText = siteType == 'new' ? 'SAVE JSON' : 'UPDATE JSON';
-
+  
   div(class="ui container")
     h1
       a(href="/")
@@ -41,4 +41,4 @@ mixin main()
         | pcs. #{count}
 
       +images()
-      +footer(buttonText)
+      +footer(buttonText, generate)

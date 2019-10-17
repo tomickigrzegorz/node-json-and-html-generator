@@ -1,0 +1,23 @@
+include ./styles.pug
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title #{seoTitle}
+    meta(name="description" content=bodyTitle)
+    +styles()
+  body
+    .container
+      h1 #{bodyTitle}
+      .data
+        sup #{bodyDate}
+      .article-text!= bodyText.replace(/\n?\r\n/g, '<br>')
+
+      each image, i in images
+        figure
+          .item_img
+            img(src="./" + image.path + image.img, alt=image.alt)
+          if image.text
+            figcaption #{image.text}

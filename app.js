@@ -4,21 +4,26 @@ const express = require('express');
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
+const { port, htmlGenerator } = require('./config');
+
+const generate = htmlGenerator === 'true';
+
 
 const app = express();
-
-const port = 3000;
 
 // compression static files
 app.use(compression());
 
 // function
 const {
-  getAllFiles, getAllDirectory, getAllJson, readJson,
+  getAllFiles,
+  getAllDirectory,
+  getAllJson,
+  readJson,
 } = require('./sources/helper/images');
 
 const fileTemplate = require('./sources/helper/template');
-// const fileHtml = require('./sources/helper/html');
+const fileHtml = require('./sources/helper/html');
 
 // time for caching - maxAge
 const oneHour = 60 * 1000 * 60;
@@ -37,8 +42,9 @@ app.set('view engine', 'pug');
 // form
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// path to css, images, favico
+// path to css, images, favico and html
 app.use('/vendor', express.static(path.join(__dirname, 'sources/vendor')));
+app.use('/html', express.static(path.join(__dirname, 'html')));
 app.use('/images', express.static(path.join(__dirname, 'images'), { maxAge: oneHour }));
 
 // json data
@@ -59,6 +65,7 @@ app.post('/', (req, res) => {
     imageName,
     imageAlt,
     imageText,
+    html,
   } = req.body;
 
   const imagePath = imageName.map((image, index) => `
@@ -79,8 +86,12 @@ app.post('/', (req, res) => {
     images: imagePath,
   };
 
+  // console.log(config.html);
+
   // save html files
-  // fileHtml(config);
+  if (generate || html === 'on') {
+    fileHtml(config);
+  }
 
   // save json filess
   fileTemplate(config);
@@ -89,9 +100,17 @@ app.post('/', (req, res) => {
 });
 
 const keys = getAllDirectory('./images/');
-const values = getAllJson('./data/', 'json');
+const jsonFiles = getAllJson('./data/', 'json');
+const htmlFiles = getAllJson('./html/', 'html');
 
-const merged = keys.reduce((obj, key) => ({ ...obj, [key]: values.includes(key) }), {});
+const merged = keys.reduce((obj, key) => ({
+  ...obj,
+  [key]: jsonFiles.includes(key),
+}), {});
+
+const allFolders = Object.entries(merged).map((item) => [...item, htmlFiles.includes(item[0])]);
+
+console.log(allFolders);
 
 // showing all directory
 app.get('/', (req, res) => {
@@ -99,7 +118,7 @@ app.get('/', (req, res) => {
     siteType: 'home',
     port,
     title: 'All directory',
-    folders: Object.entries(merged),
+    folders: allFolders,
   });
 });
 
@@ -131,6 +150,7 @@ app.get('/name/:imageFolder', (req, res) => {
     title: imageFolder,
     count: allImages.length,
     images: allImages,
+    generate,
   });
 });
 
@@ -175,17 +195,19 @@ app.get('/update/:imageFolder', (req, res) => {
     data: dateCreateJsonFile,
     count: allImages.length,
     images: readimg,
+    generate,
     // features: readimg,
   });
 });
 
 // success
 app.get('/success', (req, res) => {
+  const htmlText = generate ? 'JSON and HTML' : 'JSON';
   res.render('success', {
     siteType: 'success',
     port,
     title: 'success',
-    text: 'JSON has been saved to the data folder',
+    text: `${htmlText} has been saved`,
   });
 });
 
@@ -212,5 +234,5 @@ app.use((err, req, res) => {
 // listen http://localhost:3000
 app.listen(port, () => {
   // eslint-disable-next-line no-console
-  console.log('Server is runing at port: http://localhost:3000');
+  console.log(`Server is runing at port: http://localhost:${port}`);
 });
