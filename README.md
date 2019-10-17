@@ -15,9 +15,16 @@ Before the first use, clone this repository and install node dependencies: `yarn
 The application needs two folders:
 * data
 * images
+* html
 
 The `date` folder for saving json files  
 The `images` folder consists of `gallery-name`
+The `html` in which the html files are saved
+
+
+> It is now possible to save html files after clicking the `"NEW"` and `"UPDATE"` buttons. Of course, html are very primitive, but you can build on your own just modify ```sources > views> html> * .pug```
+
+> A `.env` file has been added in root with which we can control the port at which the page will be displayed to us and whether the checkbox (HTML SAVE) will be selected by default in the cms preview - `HTML_GENERATOR=true`
 
 ## Run the app
 
@@ -31,6 +38,7 @@ Open the address `http://localhost:3000`. A list of available folders should app
 * ~~the possibility to update the generated json~~
 * ~~adding grids to better sort~~
 * ~~the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up~~
+* ~~html generator~~
 * small wysiwyg html editor
 * validation of the form
 * ...
@@ -50,14 +58,18 @@ Most important part of it's technology stack:
 
 ![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/page.png)
 
+### OPEN THE GENERATED HTML FILE
+
+![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/page-html.png)
+
 ### CALENDAR
 
-![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
+![Screenshot3](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
 
 ### GRID-OFF
 
-![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
+![Screenshot4](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
 
 ### GRID-ON
 
-![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
+![Screenshot5](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
