@@ -1,4 +1,4 @@
-## JSON GENERATOR
+## JSON AND HTML GENERATOR
 
 This is a simple CMS application to generate json and html. This Json is used to generate static html files in another project, exactly including this one [photoBlog](https://github.com/tomik23/photoBlog)
 
