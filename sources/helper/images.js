@@ -1,4 +1,6 @@
-const { statSync, readdirSync, readFileSync } = require('fs');
+const {
+  statSync, existsSync, readdirSync, readFileSync, mkdirSync,
+} = require('fs');
 
 const getAllFiles = (dir) => readdirSync(dir).reduce((files, file) => {
   const name = `${dir}${file}`;
@@ -20,7 +22,17 @@ const readJson = (dir) => {
   return images.body.items.map((image) => `${image.path}${image.img}`);
 };
 
+const checkFolders = (dir) => {
+  try {
+    if (!existsSync(dir)) {
+      mkdirSync(dir);
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 
 module.exports = {
-  getAllFiles, getAllDirectory, getAllJson, readJson,
+  checkFolders, getAllFiles, getAllDirectory, getAllJson, readJson,
 };

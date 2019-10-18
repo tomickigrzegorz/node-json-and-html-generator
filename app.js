@@ -5,6 +5,14 @@ const compression = require('compression');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
 const { port, htmlGenerator } = require('./config');
+// function
+const {
+  getAllFiles,
+  getAllDirectory,
+  getAllJson,
+  readJson,
+  checkFolders,
+} = require('./sources/helper/images');
 
 const generate = htmlGenerator === 'true';
 
@@ -13,14 +21,6 @@ const app = express();
 
 // compression static files
 app.use(compression());
-
-// function
-const {
-  getAllFiles,
-  getAllDirectory,
-  getAllJson,
-  readJson,
-} = require('./sources/helper/images');
 
 const fileTemplate = require('./sources/helper/template');
 const fileHtml = require('./sources/helper/html');
@@ -98,6 +98,10 @@ app.post('/', (req, res) => {
 
   res.redirect('./success');
 });
+
+// checking if folders exist if they are not created
+checkFolders('./data/');
+checkFolders('./html/');
 
 const keys = getAllDirectory('./images/');
 const jsonFiles = getAllJson('./data/', 'json');
