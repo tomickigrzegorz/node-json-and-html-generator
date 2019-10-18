@@ -4,7 +4,9 @@ This is a simple CMS application to generate json and html. This Json is used to
 
 > The problem that was solved, I had a script that generated an empty `Json` with only added photos, and the rest I had to enter manually. It was not easy because everything had to be inserted and formatted manually.
 
-Of course, nothing prevents you from generating final HTML files instead of JSON files.
+It is now possible to save html files after clicking the `"NEW"` and `"UPDATE"` buttons. Of course, html are very primitive, but you can build on your own just modify ```sources > views> html> * .pug```
+
+A `.env` file has been added in root with which we can control the port at which the page will be displayed to us and whether the checkbox (HTML SAVE) will be selected by default in the cms preview - `HTML_GENERATOR=true`
 
 ## Initialization
 
@@ -12,19 +14,10 @@ Before the first use, clone this repository and install node dependencies: `yarn
 
 ## Basic configuration
 
-The application needs two folders:
-* data
-* images
-* html
+The application needs folders `images`, 
+This folder should contain folders with individual photos. See the `images` folder in this repository. 
 
-The `date` folder for saving json files  
-The `images` folder consists of `gallery-name`
-The `html` in which the html files are saved
-
-
-> It is now possible to save html files after clicking the `"NEW"` and `"UPDATE"` buttons. Of course, html are very primitive, but you can build on your own just modify ```sources > views> html> * .pug```
-
-> A `.env` file has been added in root with which we can control the port at which the page will be displayed to us and whether the checkbox (HTML SAVE) will be selected by default in the cms preview - `HTML_GENERATOR=true`
+> Note the folder name is the name of the `html` and `json` file that will be generated. The name should not contain special characters or spaces. A valid example of `one-day-in-berlin`.
 
 ## Run the app
 
