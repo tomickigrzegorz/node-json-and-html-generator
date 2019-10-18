@@ -34,14 +34,14 @@ Open the address `http://localhost:3000`. A list of available folders should app
 
 ## TODO
 
-* ~~first adding a page with a list of available folders with photos to choose from~~
-* ~~the possibility to update the generated json~~
-* ~~adding grids to better sort~~
-* ~~the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up~~
-* ~~html generator~~
-* small wysiwyg html editor
-* validation of the form
-* ...
+- [x] first adding a page with a list of available folders with photos to choose from
+- [x] the possibility to update the generated json
+- [x] adding grids to better sort
+- [x] the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up
+- [x] html generator
+- [ ] small wysiwyg html editor
+- [ ] validation of the form
+- [ ] ...
 
 ## Other information
 
@@ -54,22 +54,27 @@ Most important part of it's technology stack:
 * [zooom.js](https://github.com/tomik23/zooom.js)
 * [SortableJS](https://github.com/SortableJS/Sortable)
 
+---
 ### MAIN PAGE
 
 ![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/page.png)
 
+---
 ### OPEN THE GENERATED HTML FILE
 
 ![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/page-html.png)
 
+---
 ### CALENDAR
 
 ![Screenshot3](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
 
+---
 ### GRID-OFF
 
 ![Screenshot4](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
 
+---
 ### GRID-ON
 
 ![Screenshot5](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
