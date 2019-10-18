@@ -1,6 +1,6 @@
 ## JSON GENERATOR
 
-This is a simple CMS application to generate json. This Json is used to generate static html files in another project, exactly including this one [photoBlog](https://github.com/tomik23/photoBlog)
+This is a simple CMS application to generate json and html. This Json is used to generate static html files in another project, exactly including this one [photoBlog](https://github.com/tomik23/photoBlog)
 
 > The problem that was solved, I had a script that generated an empty `Json` with only added photos, and the rest I had to enter manually. It was not easy because everything had to be inserted and formatted manually.
 
