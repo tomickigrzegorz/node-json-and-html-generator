@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Installation dotenv
 - Create configuration files .env, config.js
+- Function checking and creating main html/data folders
 - Ability to generate html files
 
 ### Changed 
@@ -14,19 +15,19 @@ All notable changes to this project will be documented in this file.
 
 ## 2019-10-02
 ### Changed
-- delete unnecessary folder in photos
-- update devDependencies
+- Delete unnecessary folder in photos
+- Update devDependencies
 
 ## 2019-08-10
 ### Added
-- pug template
+- PUG template
 
 ### Changed
 - server.js -> app.js
 - Return to vivid colors
 
 ### Removed
-- html template
+- HTML template
 - express-es6-template-engine library
 
 ## 2019-08-07
