@@ -1,4 +1,3 @@
-//- - var host = 'http://localhost:' + port + '/vendor/';
 - var host = '/vendor/';
 
 html(lang="en")
@@ -12,6 +11,7 @@ html(lang="en")
     if siteType == 'new' || siteType == 'update'
       link(rel="stylesheet", href=host + "css/flatpickr.min.css")
       link(rel="stylesheet", href=host + "css/zooom.min.css")
+      link(rel="stylesheet", href=host + "css/pell.min.css")
       link(rel="stylesheet", href=host + "css/style.css")
     else 
       link(rel="stylesheet", href=host + "css/style.css")
@@ -25,6 +25,7 @@ html(lang="en")
       script(src=host + "js/flatpickr.pl.js")
       script(src=host + "js/zooom.min.js")
       script(src=host + "js/sortable.min.js")
+      script(src=host + "js/pell.min.js")
       script(src=host + "js/smooth-scroll.js")
 
       script.

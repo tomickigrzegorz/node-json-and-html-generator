@@ -1,4 +1,4 @@
-body>.ui.container {
+body > .ui.container {
   margin: 30px auto;
 }
 
@@ -24,7 +24,7 @@ h2 {
   text-transform: uppercase;
 }
 
-.ui.form .field>label {
+.ui.form .field > label {
   display: flex;
   justify-content: space-between;
 }
@@ -38,8 +38,8 @@ h2 {
   position: absolute;
   top: -1rem;
   left: -1rem;
-  background-color: #F0F0F0;
-  content: '';
+  background-color: #f0f0f0;
+  content: "";
   z-index: -1;
   width: calc(100% + 2rem);
   height: calc(100% + 3rem);
@@ -50,7 +50,7 @@ h2 {
 
 .required:after {
   position: absolute;
-  content: 'all fields are required';
+  content: "all fields are required";
   bottom: -23px;
   right: 0;
   font-size: 12px;
@@ -88,7 +88,7 @@ h2 {
 }
 
 .box-content {
-  display: flex
+  display: flex;
 }
 
 .ui.button.scroll {
@@ -102,7 +102,7 @@ h2 {
 
 .highlight img {
   opacity: 0.4;
-  border: 2px solid #000
+  border: 2px solid #000;
 }
 
 .selected {
