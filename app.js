@@ -88,8 +88,8 @@ app.post('/', (req, res) => {
 
   // console.log(config.html);
 
-  // save html files
-  if (generate || html === 'on') {
+  // save html files, dependent on .env (HTML_GENERATOR=true/false) and checkbox (HTML SAVE)
+  if (generate && html === 'on') {
     fileHtml(config);
   }
 
