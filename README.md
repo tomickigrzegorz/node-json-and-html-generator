@@ -32,7 +32,7 @@ Open the address `http://localhost:3000`. A list of available folders should app
 - [x] adding grids to better sort
 - [x] the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up
 - [x] html generator
-- [ ] small wysiwyg html editor
+- [x] small wysiwyg html editor
 - [ ] validation of the form
 - [ ] ...
 
@@ -45,6 +45,7 @@ Most important part of it's technology stack:
 * [semantic-ui](https://semantic-ui.com/)
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)
+* [pell](https://github.com/jaredreich/pell)
 * [SortableJS](https://github.com/SortableJS/Sortable)
 
 ---
@@ -63,11 +64,16 @@ Most important part of it's technology stack:
 ![Screenshot3](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
 
 ---
+### WYSIWYG TEXT EDITOR
+
+![Screenshot4](https://github.com/tomik23/json-generator/blob/master/screenshot/wysiwyg.png)
+
+---
 ### GRID-OFF
 
-![Screenshot4](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
+![Screenshot5](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
 
 ---
 ### GRID-ON
 
-![Screenshot5](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
+![Screenshot6](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
