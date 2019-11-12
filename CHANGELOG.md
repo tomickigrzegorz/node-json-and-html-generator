@@ -1,6 +1,17 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-11-12
+### Change
+- Photo path repair when creating new json - "NEW"
+
+### Added
+- WYSIWYG text editor
+
+## 2019-11-08
+### Changed
+- Save html files, dependent on .env (HTML_GENERATOR=true/false) and checkbox (HTML SAVE)
+
 ## 2019-10-18
 ### Added
 - Installation dotenv
