@@ -76,6 +76,7 @@ app.post('/', (req, res) => {
       "text": ${JSON.stringify(imageText[index])} 
     }`);
 
+
   const config = {
     nameFolder: folderName,
     seoTitle: JSON.stringify(seoTitle),
@@ -85,8 +86,6 @@ app.post('/', (req, res) => {
     bodyText: JSON.stringify(bodyText),
     images: imagePath,
   };
-
-  // console.log(config.html);
 
   // save html files
   if (generate || html === 'on') {
