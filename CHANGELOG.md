@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 ### Change
 - Photo path repair when creating new json - "NEW"
 
+### Added
+- WYSIWYG text editor
+- Expanding WYSIWYG capabilities by clearing formatting and enlarging the main text field.
+
 ## 2019-11-08
 ### Changed
 - Save html files, dependent on .env (HTML_GENERATOR=true/false) and checkbox (HTML SAVE)

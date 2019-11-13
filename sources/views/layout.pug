@@ -1,17 +1,17 @@
-//- - var host = 'http://localhost:' + port + '/vendor/';
 - var host = '/vendor/';
 
 html(lang="en")
   head
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css")
     title #{title}
 
     if siteType == 'new' || siteType == 'update'
       link(rel="stylesheet", href=host + "css/flatpickr.min.css")
       link(rel="stylesheet", href=host + "css/zooom.min.css")
+      link(rel="stylesheet", href=host + "css/pell.min.css")
       link(rel="stylesheet", href=host + "css/style.css")
     else 
       link(rel="stylesheet", href=host + "css/style.css")
@@ -25,6 +25,7 @@ html(lang="en")
       script(src=host + "js/flatpickr.pl.js")
       script(src=host + "js/zooom.min.js")
       script(src=host + "js/sortable.min.js")
+      script(src=host + "js/pell.min.js")
       script(src=host + "js/smooth-scroll.js")
 
       script.
@@ -32,6 +33,46 @@ html(lang="en")
         const type = '#{siteType}';
 
         window.addEventListener('DOMContentLoaded', () => {
+          
+          const enlarge = '<svg xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 32 32"><path fill="red" d="M32 0v13l-5-5-6 6-3-3 6-6-5-5zM14 21l-6 6 5 5H0V19l5 5 6-6z"></path></svg>';
+          const shrink = '<svg xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 32 32"><path fill="red" d="M14 18v13l-5-5-6 6-3-3 6-6-5-5zM32 3l-6 6 5 5H18V1l5 5 6-6z"></path></svg>';
+          const clear = '<svg xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 32 32"><path fill="#bf00ff" d="M0 28h18v4H0zM28 4h-9.455l-5.743 22H8.668l5.743-22H6V0h22zm1.055 28L25 27.945 20.945 32 19 30.055 23.055 26 19 21.945 20.945 20 25 24.055 29.055 20 31 21.945 26.945 26 31 30.055z"/></svg>';
+
+          const editor = pell.init({
+            element: document.getElementById('editor'),
+            defaultParagraphSeparator: 'br',
+            actions: [
+              'bold',
+              'italic',
+              'paragraph',
+              'quote',
+              'olist',
+              'ulist',
+              'link',
+              {
+                name: 'clear',
+                icon: clear,
+                title: 'Clear formatting',
+                result: () => document.execCommand('removeFormat', false, "")
+              },
+              {
+                name: 'full',
+                icon: enlarge,
+                title: 'Full screen',
+                result: () => {
+                  const buttonFullScreen = document.querySelector('[title="Full screen"]');
+                  buttonFullScreen.innerHTML = buttonFullScreen.innerHTML === enlarge ? shrink : enlarge;
+
+                  document.body.classList.toggle('full-screen');
+                }
+              },
+            ],
+            onChange: function (html) {
+              document.getElementById('text-output').innerHTML = html
+            }
+          })
+
+
           const example1 = document.getElementById('columns');
           const sortable = new Sortable(example1, {
             ghostClass: 'highlight',
@@ -44,7 +85,8 @@ html(lang="en")
             const seoDescription = document.querySelector('[name="seoDescription"]');
             const bodyTitle = document.querySelector('[name="bodyTitle"]');
             const bodyDate = document.querySelector('[name="bodyDate"]');
-            const bodyText = document.querySelector('[name="bodyText"]');
+            const bodyText = document.querySelector('.pell-content');
+            const textareaHidden = document.querySelector('[name="bodyText"]');
 
             // seo
             seoTitle.value = head.title;
@@ -53,7 +95,9 @@ html(lang="en")
             // data on the top of the site
             bodyTitle.value = body.title;
             bodyDate.value = body.date;
-            bodyText.value = body.text;
+            bodyText.innerHTML = body.text;
+            textareaHidden.innerHTML = body.text;
+            //- bodyText.innerHTML = body.text.replace(/\n?\r\n/g, '<br>');
 
             body.items.forEach((element, index) => {
               // console.log(element);
@@ -120,5 +164,9 @@ html(lang="en")
             dateFormat: 'd.m.Y',
             allowInput: true
           });
+
+
+
+
         });
 
