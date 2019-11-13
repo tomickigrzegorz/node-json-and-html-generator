@@ -150,3 +150,29 @@ h2 {
   cursor: pointer;
   margin: 0 20px;
 }
+
+.full-screen {
+  overflow: hidden;
+}
+
+.full-screen .pell {
+  position: fixed;
+  max-width: 1200px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.full-screen .pell .pell-content {
+  font-size: 1.6rem;
+  line-height: 150%;
+  height: calc(100vh - 88px);
+}
+
+.full-screen .save-json {
+  position: fixed;
+  bottom: 0;
+  z-index: 8;
+}

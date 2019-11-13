@@ -33,6 +33,10 @@ html(lang="en")
         const type = '#{siteType}';
 
         window.addEventListener('DOMContentLoaded', () => {
+          
+          const enlarge = '<svg xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 32 32"><path fill="red" d="M32 0v13l-5-5-6 6-3-3 6-6-5-5zM14 21l-6 6 5 5H0V19l5 5 6-6z"></path></svg>';
+          const shrink = '<svg xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 32 32"><path fill="red" d="M14 18v13l-5-5-6 6-3-3 6-6-5-5zM32 3l-6 6 5 5H18V1l5 5 6-6z"></path></svg>';
+          const clear = '<svg xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 32 32"><path fill="#bf00ff" d="M0 28h18v4H0zM28 4h-9.455l-5.743 22H8.668l5.743-22H6V0h22zm1.055 28L25 27.945 20.945 32 19 30.055 23.055 26 19 21.945 20.945 20 25 24.055 29.055 20 31 21.945 26.945 26 31 30.055z"/></svg>';
 
           const editor = pell.init({
             element: document.getElementById('editor'),
@@ -47,14 +51,23 @@ html(lang="en")
               'link',
               {
                 name: 'clear',
-                icon: 'Clear',
+                icon: clear,
                 title: 'Clear formatting',
                 result: () => document.execCommand('removeFormat', false, "")
               },
+              {
+                name: 'full',
+                icon: enlarge,
+                title: 'Full screen',
+                result: () => {
+                  const buttonFullScreen = document.querySelector('[title="Full screen"]');
+                  buttonFullScreen.innerHTML = buttonFullScreen.innerHTML === enlarge ? shrink : enlarge;
+
+                  document.body.classList.toggle('full-screen');
+                }
+              },
             ],
-            //- onChange: html => console.log(html)
             onChange: function (html) {
-              //- const res = html.replace(/href/gm, 'target="_blank" rel="noopener" class="sweep-to-top" href');
               document.getElementById('text-output').innerHTML = html
             }
           })
