@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - WYSIWYG text editor
+- Expanding WYSIWYG capabilities by clearing formatting and enlarging the main text field.
 
 ## 2019-11-08
 ### Changed
