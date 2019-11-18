@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-11-18
+### Added
+- Adding the author field, default setting in the `.env AUTHOR=your name` configuration file
+
+### Changed
+- The publication date is no longer overwritten with the update date
+- Change the line-height of the main text field when this field is enlarged to fill the entire screen
+
 ## 2019-11-12
 ### Change
 - Photo path repair when creating new json - "NEW"
