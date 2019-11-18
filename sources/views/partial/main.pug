@@ -36,7 +36,11 @@ mixin main()
             label text
             div(id="editor" class="pell" required)
             textarea(id="text-output" name="bodyText" hidden)
-
+        div.fields
+          div(class="eight wide field")
+            label author
+            input(type="text" name="bodyAuthor" placeholder="Author of the article" value=authorarticle required)
+          
       h2(class="ui dividing header") list of photos 
         i(class="red long arrow alternate right icon")
         | pcs. #{count}

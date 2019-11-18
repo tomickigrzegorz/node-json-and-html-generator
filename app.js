@@ -4,7 +4,7 @@ const express = require('express');
 const compression = require('compression');
 const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
-const { port, htmlGenerator } = require('./config');
+const { port, htmlGenerator, author } = require('./config');
 // function
 const {
   getAllFiles,
@@ -15,7 +15,6 @@ const {
 } = require('./sources/helper/images');
 
 const generate = htmlGenerator === 'true';
-
 
 const app = express();
 
@@ -62,6 +61,7 @@ app.post('/', (req, res) => {
     bodyTitle,
     bodyDate,
     bodyText,
+    bodyAuthor,
     imageName,
     imageAlt,
     imageText,
@@ -84,6 +84,7 @@ app.post('/', (req, res) => {
     bodyTitle: JSON.stringify(bodyTitle),
     bodyDate: JSON.stringify(bodyDate),
     bodyText: JSON.stringify(bodyText),
+    bodyAuthor: JSON.stringify(bodyAuthor),
     images: imagePath,
   };
 
@@ -153,6 +154,7 @@ app.get('/name/:imageFolder', (req, res) => {
     count: allImages.length,
     images: allImages,
     generate,
+    author,
   });
 });
 
@@ -198,6 +200,7 @@ app.get('/update/:imageFolder', (req, res) => {
     count: allImages.length,
     images: readimg,
     generate,
+    author,
     // features: readimg,
   });
 });

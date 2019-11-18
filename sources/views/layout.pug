@@ -80,12 +80,13 @@ html(lang="en")
           });
 
           const updateForm = (data) => {
-            const { head, body } = data;
+            const { head, body, schema } = data;
             const seoTitle = document.querySelector('[name="seoTitle"]');
             const seoDescription = document.querySelector('[name="seoDescription"]');
             const bodyTitle = document.querySelector('[name="bodyTitle"]');
             const bodyDate = document.querySelector('[name="bodyDate"]');
             const bodyText = document.querySelector('.pell-content');
+            const bodyAuthor = document.querySelector('[name="bodyAuthor"]');
             const textareaHidden = document.querySelector('[name="bodyText"]');
 
             // seo
@@ -96,6 +97,7 @@ html(lang="en")
             bodyTitle.value = body.title;
             bodyDate.value = body.date;
             bodyText.innerHTML = body.text;
+            bodyAuthor.value = schema.author;
             textareaHidden.innerHTML = body.text;
             //- bodyText.innerHTML = body.text.replace(/\n?\r\n/g, '<br>');
 
@@ -164,7 +166,6 @@ html(lang="en")
             dateFormat: 'd.m.Y',
             allowInput: true
           });
-
 
 
 
