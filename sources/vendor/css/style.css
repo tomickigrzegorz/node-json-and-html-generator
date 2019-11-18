@@ -167,7 +167,7 @@ h2 {
 
 .full-screen .pell .pell-content {
   font-size: 1.6rem;
-  line-height: 150%;
+  line-height: 150% !important;
   height: calc(100vh - 88px);
 }
 
