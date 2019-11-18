@@ -1,8 +1,6 @@
 const { writeFile } = require('fs');
 
-const datePublished = new Date().toISOString().slice(0, 10);
-const dateModified = datePublished;
-const author = 'XXXXXXXXX';
+const dateModified = new Date().toISOString().slice(0, 10);
 
 const template = (options) => {
   const {
@@ -12,8 +10,12 @@ const template = (options) => {
     bodyTitle,
     bodyDate,
     bodyText,
+    bodyAuthor,
     images,
   } = options;
+
+  const date = bodyDate.replace(/"/g, '').split('.');
+  const datePublished = `${date[2]}-${date[1]}-${date[0]}`;
 
   const templateJson = `{
   "head": {
@@ -30,7 +32,7 @@ const template = (options) => {
   "schema": {
     "datePublished": "${datePublished}",
     "dateModified": "${dateModified}",
-    "author": "${author}"
+    "author": ${bodyAuthor}
   }
 }
   `;
