@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-11-19
+### Changed
+- Separator in contenteditable div
+- Change authorarticle to author so that the variable from .env can be read correctly
+
 ## 2019-11-18
 ### Added
 - Adding the author field, default setting in the `.env AUTHOR=your name` configuration file
