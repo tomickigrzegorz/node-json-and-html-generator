@@ -3,7 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## 2019-11-28
 ### Changed
-- Style repair with enlarged contenteditable field.
+- Style repair with enlarged contenteditable field
+- Support for the new line in the photos description
 
 ## 2019-11-19
 ### Changed
