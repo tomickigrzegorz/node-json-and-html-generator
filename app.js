@@ -89,7 +89,7 @@ app.post('/', (req, res) => {
   };
 
   // save html files, dependent on .env (HTML_GENERATOR=true/false) and checkbox (HTML SAVE)
-  if (generate && html === 'on') {
+  if (generate || html === 'on') {
   // save html files
     fileHtml(config);
   }
