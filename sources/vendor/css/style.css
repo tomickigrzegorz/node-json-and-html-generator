@@ -166,8 +166,6 @@ h2 {
 }
 
 .full-screen .pell .pell-content {
-  font-size: 1.6rem;
-  line-height: 150% !important;
   height: calc(100vh - 88px);
 }
 
@@ -175,4 +173,9 @@ h2 {
   position: fixed;
   bottom: 0;
   z-index: 8;
+}
+
+.pell-content {
+  font-size: 16px;
+  line-height: 150% !important;
 }
