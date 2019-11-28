@@ -73,7 +73,7 @@ app.post('/', (req, res) => {
       "path": "images/${folderName}/",
       "img": "${image}",
       "alt": "${imageAlt[index]}",
-      "text": ${JSON.stringify(imageText[index])} 
+      "text": ${JSON.stringify(imageText[index].replace(/\n?\r\n/g, '<br>'))} 
     }`);
 
 
