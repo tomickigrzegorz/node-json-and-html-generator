@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-11-28
+### Changed
+- Style repair with enlarged contenteditable field.
+
 ## 2019-11-19
 ### Changed
 - Separator in contenteditable div
