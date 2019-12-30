@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2019-12-30
+## Changed
+- Update devDependencies
+- Fixed 
+
 ## 2019-11-28
 ### Changed
 - Style repair with enlarged contenteditable field
