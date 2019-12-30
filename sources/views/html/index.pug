@@ -21,4 +21,4 @@ html(lang="en")
           .item_img
             img(src="./" + image.path + image.img, alt=image.alt)
           if image.text
-            figcaption #{image.text}
+            figcaption!= image.text.replace(/\n?\r\n/g, '<br>')
