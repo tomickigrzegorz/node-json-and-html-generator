@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 ## 2019-12-30
 ## Changed
 - Update devDependencies
-- Fixed 
+- Fixed missing br in captions under the pictures in html 
 
 ## 2019-11-28
 ### Changed
