@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## 2020-01-01
 ## Changed
-- Placing semantic styles and fonts locally
+- Placing Semantic-UI styles and fonts locally
 
 ## 2019-12-30
 ## Changed
