@@ -69,6 +69,7 @@ Most important part of it's technology stack:
 ![Screenshot4](https://github.com/tomik23/json-generator/blob/master/screenshot/wysiwyg.png)
 
 ---
+> Each of the photos, including alt and photo description, can be moved among themselves to help manage the order of photos. Of course, the easiest way to do this is when `GRID` mode is enabled. 
 ### GRID-OFF
 
 ![Screenshot5](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
