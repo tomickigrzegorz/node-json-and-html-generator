@@ -33,8 +33,6 @@ Open the address `http://localhost:3000`. A list of available folders should app
 - [x] the ability to move photos (drag-and-drop), the problem occurs when the images are from different cameras, or the file names are mixed up
 - [x] html generator
 - [x] small wysiwyg html editor
-- [ ] validation of the form
-- [ ] ...
 
 ## Other information
 
@@ -42,7 +40,6 @@ Most important part of it's technology stack:
 
 * [express.js](https://expressjs.com/)
 * [pug](https://github.com/pugjs/pug)
-* [semantic-ui](https://semantic-ui.com/)
 * [flatpickr](https://github.com/flatpickr/flatpickr)
 * [zooom.js](https://github.com/tomik23/zooom.js)
 * [pell](https://github.com/jaredreich/pell)
@@ -51,30 +48,30 @@ Most important part of it's technology stack:
 ---
 ### MAIN PAGE
 
-![Screenshot1](https://github.com/tomik23/json-generator/blob/master/screenshot/page.png)
+<img src="screenshot/page.png">
 
 ---
 ### OPEN THE GENERATED HTML FILE
 
-![Screenshot2](https://github.com/tomik23/json-generator/blob/master/screenshot/page-html.png)
+<img src="screenshot/page-html.png">
 
 ---
 ### CALENDAR
 
-![Screenshot3](https://github.com/tomik23/json-generator/blob/master/screenshot/calendar.png)
+<img src="screenshot/calendar.png">
 
 ---
 ### WYSIWYG TEXT EDITOR
 
-![Screenshot4](https://github.com/tomik23/json-generator/blob/master/screenshot/wysiwyg.png)
+<img src="screenshot/wysiwyg.png">
 
 ---
 > Each of the photos, including alt and photo description, can be moved among themselves to help manage the order of photos. Of course, the easiest way to do this is when `GRID` mode is enabled. 
 ### GRID-OFF
 
-![Screenshot5](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-off.png)
+<img src="screenshot/grid-off.png">
 
 ---
 ### GRID-ON
 
-![Screenshot6](https://github.com/tomik23/json-generator/blob/master/screenshot/grid-on.png)
+<img src="screenshot/grid-on.png">
