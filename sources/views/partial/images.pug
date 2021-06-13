@@ -1,18 +1,16 @@
 mixin images()
-  div(id="columns" class="ui list view-grid")
+  div(id="columns" class="columns")
     each image, i in images
       - var imageFile = image.replace('./', '').split('/')[2]
-      div.item
-        div(class="ui grid stackable box-item")
-          div(class="eleven wide column image-section")
-            div(class="ui fluid image")
-              div(class="ui red ribbon label") #{imageFile}
-              img(class="fluid image img-zoom" src="../" + image)
-              input(type="hidden" name="imageName" value=imageFile)
-          div(class="five wide column edit-section")
-            div.field
-              label alt to photo
-              input(type="text" name="imageAlt" placeholder="alt to photo")
-            div.field
-              label content under the photo
-              textarea(name="imageText" rows="4")
+      div(class="flex gap-20 item")
+        div(class="image-section") 
+          span(class="ribbon label") #{imageFile}
+          img(class="img-zoom" src="../" + image width="1200" height="800")
+          input(type="hidden" name="imageName" value=imageFile)
+        div(class="edit-section")
+          div.form-column
+            label alt to photo
+            input(type="text" name="imageAlt" placeholder="alt to photo")
+          div.form-column
+            label content under the photo
+            textarea(name="imageText" rows="4")

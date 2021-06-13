@@ -1,33 +1,35 @@
 extends layout
 
 block content
-  div.container-small
-    div(class="ui container")
-      table(class="ui unstackable teal selectable celled table")
-        thead
+  div(class="container")
+    table
+      thead
+        tr
+          th(class="text-left") List of available galleries
+          th(class="text-center") Create
+          th(class="text-center") Create
+          th(class="text-center") HTML
+      tbody
+        each folder, i in folders
+          - var newFolder = folder[0]
+          - var update = folder[1]
+          - var html = folder[2]
           tr
-            th(class="ten wide") List of available galleries
-            th(class="three wide center aligned") Create
-            th(class="three wide center aligned") Create
-            th(class="three wide center aligned") HTML
-        tbody
-          each folder, i in folders
-            - var newFolder = folder[0]
-            - var update = folder[1]
-            - var html = folder[2]
-            tr
-              td
-                i(class="camera retro icon") 
+            td
+              div(class="flex align-center")
+                svg(class="icon small mr-10") 
+                  use(xlink:href="#camera-icon")
                 | #{newFolder}
-              td(class="center aligned")
-                a(href="/name/" + newFolder class="ui blue label") NEW
-              td(class="center aligned") 
-                if update
-                  a(href="/update/" + newFolder class="ui orange label") UPDATE
-              td(class="center aligned") 
-                if html
-                  a(href='../html/' + newFolder + ".html" class="ui red label" target="_blank") HTML
+            td(class="text-center")
+              a(href="/name/" + newFolder class="button bg-blue") NEW
+            td(class="text-center") 
+              if update
+                a(href="/update/" + newFolder class="button bg-orange") UPDATE
+            td(class="text-center") 
+              if html
+                a(href='../html/' + newFolder + ".html" class="button bg-red" target="_blank") HTML
 
-      div(class="ui bottom attached info message")
-        i(class="info icon")
-        | You can create json or update an existing.
+    div(class="info blue flex align-center box-shadow")
+      svg(class="icon small mr-10") 
+        use(xlink:href="#info-icon")
+      | You can create json or update an existing.

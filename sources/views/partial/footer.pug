@@ -1,13 +1,13 @@
 mixin footer(buttonName, generate)
-  div.save-json
-    div(class="ui container box-content")
-      button(class="ui orange button") #{buttonName}
-      div(class="ui checkbox grid-view-checked")
-        input(id="gridGen" type="checkbox" name="grid")
-        label(for="gridGen") grid
-      div(class="ui checkbox html-generotor")
-        input(id="html" type="checkbox" name="html" checked = generate == true)
-        label(for="html") HTML SAVE
-      a(href="#" class="ui gray button scroll")
-        i(class="chevron up icon")
-        | TOP
+  div.footer.gap-20.mtb-20.flex
+    button(class="button bg-orange") #{buttonName}
+    div(class="flex checkbox align-center grid-view-checked")
+      input(id="gridGen" class="styled-checkbox" type="checkbox" name="grid")
+      label(for="gridGen" class="flex align-center") grid
+    div(class="flex checkbox align-center html-generotor")
+      input(id="html" class="styled-checkbox" type="checkbox" name="html" checked = generate == true)
+      label(for="html" class="flex align-center") html save
+    button(class="flex button align-center bg-gray gap-10 scroll" name="scroll")
+      svg(class="icon smaller fill-white") 
+          use(xlink:href="#chevron-up-icon")
+      div TOP

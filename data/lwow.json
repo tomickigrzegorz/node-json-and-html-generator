@@ -10,12 +10,6 @@
     "items": [
     {
       "path": "images/lwow/",
-      "img": "IMG_0412.jpg",
-      "alt": "last",
-      "text": "last" 
-    },
-    {
-      "path": "images/lwow/",
       "img": "IMG_0368.jpg",
       "alt": "",
       "text": "" 
@@ -52,15 +46,21 @@
     },
     {
       "path": "images/lwow/",
+      "img": "IMG_0412.jpg",
+      "alt": "last",
+      "text": "last \"zobaczmy\" jakiś tekst" 
+    },
+    {
+      "path": "images/lwow/",
       "img": "IMG_0367.jpg",
-      "alt": "first",
+      "alt": "first ostatni tekst",
       "text": "first" 
     }
     ]
   },
   "schema": {
-    "datePublished": "2019-10-17",
-    "dateModified": "2019-10-17",
+    "datePublished": "2019-08-30",
+    "dateModified": "2021-06-12",
     "author": "XXXXXXXXX"
   }
 }
