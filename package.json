@@ -10,7 +10,11 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "pell": "^1.0.6",
+<<<<<<< HEAD
     "pug": "^3.0.2",
+=======
+    "pug": "^3.0.1",
+>>>>>>> 84eefdef7dbdf1c87b2ae2159f9d61d96b0a56d3
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
