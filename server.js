@@ -1,11 +1,12 @@
 const { existsSync, statSync } = require('fs');
 const path = require('path');
 const express = require('express');
+const app = express();
 const compression = require('compression');
-const bodyParser = require('body-parser');
 const favicon = require('serve-favicon');
+
 const { port, htmlGenerator, author } = require('./config');
-// function
+
 const {
   getAllFiles,
   getAllDirectory,
@@ -15,8 +16,6 @@ const {
 } = require('./sources/helper/images');
 
 const generate = htmlGenerator === 'true';
-
-const app = express();
 
 // compression static files
 app.use(compression());
@@ -39,7 +38,7 @@ app.set('views', path.join(__dirname, 'sources/views'));
 app.set('view engine', 'pug');
 
 // form
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 // path to css, images, favico and html
 app.use('/vendor', express.static(path.join(__dirname, 'sources/vendor')));
@@ -90,7 +89,7 @@ app.post('/', (req, res) => {
 
   // save html files, dependent on .env (HTML_GENERATOR=true/false) and checkbox (HTML SAVE)
   if (generate || html === 'on') {
-  // save html files
+    // save html files
     fileHtml(config);
   }
 

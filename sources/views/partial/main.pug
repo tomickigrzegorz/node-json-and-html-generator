@@ -5,44 +5,47 @@ mixin main()
   - var dataCreate = data;
   - var buttonText = siteType == 'new' ? 'SAVE JSON' : 'UPDATE JSON';
 
-  div(class="ui container")
+  div(class="container page")
     h1
-      a(href="/")
-        i(class="home red icon")
-        | #{title}
+      a(href="/" class="text-d-none uppercase")
+        div(class="flex align-center")
+          svg(class="icon big mr-10 fill-red") 
+            use(xlink:href="#home-icon")
+          | #{title}
     if dataCreate
-      div(class="date-time") Last change - #{data}
-    form(class="ui form" action="/" method="POST")
+      div(class="date-time")
+        small
+          Last change - #{data}
+    form(action="/" method="POST")
       input(type="hidden" name="folderName" value=title)
-      div.required
-        h4(class="ui dividing header") seo
-        div.fields
-          div(class="eight wide field")
-            label title head
-            input(type="text" name="seoTitle" placeholder="title" required)
-          div(class="eight wide field")
-            label description head
-            input(type="text" name="seoDescription" placeholder="description" required)
-        h4(class="ui dividing header") data on the top of the site
-        div(class="fields")
-          div(class="eight wide field")
-            label title H1
-            input(type="text" name="bodyTitle" placeholder="title" required)
-          div(class="eight wide field")
-            label date
-            input(type="text" class="bodyDate" name="bodyDate" placeholder="Date" required)
-        div.fields
-          div(class="sixteen wide field")
-            label text
-            div(id="editor" class="pell" required)
-            textarea(id="text-output" name="bodyText" hidden)
-        div.fields
-          div(class="eight wide field")
-            label author
-            input(type="text" name="bodyAuthor" placeholder="Author of the article" value=author required)
+      div(class="form box-shadow")
+        h4(class="dividing uppercase mb-5 pb-5") seo
+        div(class="flex gap-10")
+          div.form-column
+            label(for="seoTitle") title head
+            input(id="seoTitle" type="text" name="seoTitle" placeholder="title" required)
+          div.form-column
+            label(for="seoDescription") description head
+            input(id="seoDescription" type="text" name="seoDescription" placeholder="description" required)
+        h4(class="dividing uppercase mt-20 mb-5 ptb-5") data on the top of the site
+        div(class="flex gap-10")
+          div.form-column
+            label(for="bodyTitle") title H1
+            input(id="bodyTitle" type="text" name="bodyTitle" placeholder="title" required)
+          div.form-column
+            label(for="bodyDate") date
+            input(id="bodyDate" type="text" class="bodyDate" name="bodyDate" placeholder="Date" required)
+        div.form-column
+          label text
+          div(id="editor" class="pell" required)
+          textarea(id="text-output" name="bodyText" hidden)
+        div(class="half")
+          label(for="bodyAuthor") author
+          input(id="bodyAuthor" type="text" name="bodyAuthor" placeholder="Author of the article" value=author required)
           
-      h2(class="ui dividing header") list of photos 
-        i(class="red long arrow alternate right icon")
+      h2(class="flex align-center mtb-20 dividing uppercase") list of photos 
+        svg(class="icon big fill-red mrl-10") 
+            use(xlink:href="#long-arrow-right-icon")
         | pcs. #{count}
 
       +images()

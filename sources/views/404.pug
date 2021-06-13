@@ -1,12 +1,13 @@
 extends layout
 
 block content
-  div.container-small
-    div(class="ui container center aligned")
-      div(class="ui icon error message")
-        i(class="info icon")
-        div.content
-            div.header #{header}
-            p #{info}
-            p!= address
-            a(href="/") HOME
+  div.container
+    div(class="info red box-shadow")
+      div(class="flex content-info")
+        svg(class="icon big mt-5 mr-10") 
+          use(xlink:href="#info-icon")
+        div
+          p #{header}
+          p #{info}
+          p!=address
+          a(href="/" class="d-ib button bg-red mt-10 gap-10") HOME
