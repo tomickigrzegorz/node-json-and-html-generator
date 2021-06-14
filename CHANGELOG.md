@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## 2020-06-14
+## Changed
+- Removal of the semantic-ui library
+
+
 ## 2020-01-01
 ## Changed
 - Placing Semantic-UI styles and fonts locally
@@ -106,7 +111,7 @@ All notable changes to this project will be documented in this file.
 - First adding a page with a list of available folders with photos to choose from
 - Preparation of the form with the possibility of adding seo elements as well as page content
 - Calendar to the field with the date
-- Zoom.js library with the possibility of enlarging photos
+- Zooom.js library with the possibility of enlarging photos
 - Favicon support
 - Semantic.min.css styles
 - Form construction
